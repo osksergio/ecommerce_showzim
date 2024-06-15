@@ -1,0 +1,12 @@
+<h1>Bem-vindo ao nosso e-commerce</h1>
+
+<% if user_signed_in? %>
+  <h1>Bem-vindo ao nosso ecommerce</h1>
+  <%= link_to "logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <h2>
+    Você não está logado, por favor, se cadastre ou realize sua autenticação.
+    <%= link_to "Sign up", new_user_registration_path %> |
+    <%= link_to "Login", new_user_session_path, :class => "navbar-link" %>
+  </h2>
+<% end %>
